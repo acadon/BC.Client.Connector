@@ -1,0 +1,29 @@
+﻿<Window x:Class="Acadon.Client.Connector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:n="clr-namespace:Acadon.Client.Connector.SysTray"
+        xmlns:local="clr-namespace:Acadon.Client.Connector"
+        xmlns:p="clr-namespace:Acadon.Client.Connector.Properties"
+        mc:Ignorable="d"
+        Title="acadon_client.connector" Height="350" Width="525">
+    <Grid>
+        <n:NotifyIcon
+                x:Name="NotifyIcon"
+                Text="acadon_client.connector"
+                Icon="Resources/logo.ico"
+                BalloonTipText="{Binding Text, ElementName=balloonTipText}"
+                BalloonTipTitle="{Binding Text, ElementName=balloonTipTitle}"
+                MouseDoubleClick="NotifyIcon_MouseClick">
+            <n:NotifyIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{x:Static p:Resources.OpenLog}" Click="OpenLog_Click" />
+                    <MenuItem Header="{x:Static p:Resources.Close}" Click="Close_Click" />
+                    <MenuItem Header="{x:Static p:Resources.ToggleAutostart}" Click="Autostart_Click" />
+                </ContextMenu>
+            </n:NotifyIcon.ContextMenu>
+        </n:NotifyIcon>
+        <TextBox IsReadOnly="True" Margin="10" TextWrapping="Wrap" x:Name="Log" VerticalScrollBarVisibility="Visible" />
+    </Grid>
+</Window>

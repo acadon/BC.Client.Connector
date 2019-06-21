@@ -1,0 +1,29 @@
+﻿<Window x:Class="Acadon.Client.Connector.Views.ConfirmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Acadon.Client.Connector.Views"
+        xmlns:p="clr-namespace:Acadon.Client.Connector.Properties"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Title="acadon_client.connector" Height="150" Width="500">
+    <Window.Background>
+        <SolidColorBrush Opacity="0.95" Color="Black"/>
+    </Window.Background>
+    <DockPanel>
+        <StackPanel Margin="20 10" DockPanel.Dock="Top">
+            <Label Content="{Binding CompanyNameQst}" Foreground="LightGray" VerticalAlignment="Top"/>
+            <Label Content="{Binding OperationName}" Foreground="LightGray" FontWeight="Bold"  VerticalAlignment="Top"/>
+            <Label Content="{x:Static p:Resources.ExecuteQuestionPart2}" Foreground="LightGray" VerticalAlignment="Top"/>
+        </StackPanel>
+        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
+            <Button Margin="5" Padding="5" Width="100px" Click="Click_Yes" Content="{x:Static p:Resources.Yes}" />
+            <Button Margin="5" Padding="5" Width="100px" Click="Click_Always" Content="{x:Static p:Resources.Always}" />
+            <Button Margin="5" Padding="5" Width="100px" Click="Click_No" Content="{x:Static p:Resources.No}" />
+        </WrapPanel>
+    </DockPanel>
+</Window>
